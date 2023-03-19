@@ -1,0 +1,152 @@
+.flower_wrapper {
+  width: 100%;
+  height: 89vh;
+}
+
+.flower_background {
+  margin: 5% 0;
+  width: 100%;
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+.flower_background > img {
+  margin: 80px 0 0 20px;
+  width: 230px;
+  height: 300px;
+}
+.flower_info {
+  margin: 0 0 0 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+.star {
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+}
+.star p {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 50%;
+}
+.star > p:hover {
+  background-color: #eaa79e;
+  transform: scale(1.1);
+}
+.star h3 {
+  cursor: pointer;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  margin-left: 8%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  width: 103px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.star > h3:hover {
+  background-color: #eaa79e;
+  transform: scale(1.1);
+}
+
+.flower_info > div > h2 {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 35px;
+  color: #ffffff;
+}
+.flower_info > div > h2 > small {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+.description {
+  margin: 7em 4% 0 4%;
+  text-align: center;
+}
+.description > p {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: justify;
+  color: #949ea0;
+}
+.home_button{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 4rem 2rem;
+}
+@media screen and (max-width: 768px) {
+  .flower_background > img {
+    display: none;
+  }
+}
+/* Home Button */
+
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(92, 78, 78, 0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+.hover_text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+.button:hover .hover_text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
