@@ -70,3 +70,71 @@ export interface UserProfile {
   id: number | null
   last_name: string | null
 }
+export interface AddFlowerFavorite {
+  fav_flower: AddFavFlower;
+}
+export interface AllFlowersFavorite {
+  fav_flowers: AddFavFlower[]
+}
+export interface AddFavFlower {
+  id:      number;
+  user_id: number;
+  flower:  AddFavorite;
+}
+
+export interface AddFavorite {
+  id:              number;
+  name:            string;
+  latin_name:      string;
+  sightings:       number;
+  profile_picture: string;
+  favorite:        boolean;
+  features:        string[];
+  description:     null | string;
+}
+
+export interface favoriteFlowersState {
+  id: number, 
+  flower_id: number,
+  type: string,
+  name?: string,
+  latin_name?: string,
+  sightings?: number,
+  profile_picture?: string
+}
+
+export interface typeToast {
+  toast: boolean
+  message: string
+  color: string
+}
+export interface Sightings {
+  sightings: Sighting[];
+  meta:      Meta;
+}
+
+export interface Sighting {
+  id:             number;
+  name:           string;
+  description:    string;
+  picture:        string;
+  likes_count:    number;
+  comments_count: number;
+  created_at:     Date;
+  latitude:       number;
+  longitude:      number;
+  user:           UserSighting;
+  flower:         FlowerSighting;
+}
+
+export interface FlowerSighting {
+  id:              number;
+  name:            string;
+  latin_name:      string;
+  profile_picture: string;
+}
+
+export interface UserSighting {
+  id:        number;
+  full_name: string;
+}

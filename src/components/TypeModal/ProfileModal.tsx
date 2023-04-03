@@ -6,6 +6,7 @@ import { setToken } from '../../Redux/userTokenSlice'
 import { RootState } from '../../Redux/store'
 import { UserProfile } from '../../Types/types'
 import { setProfile } from '../../Redux/userProfileSlice'
+import { setFavorite } from '../../Redux/favoriteFlowersSlice'
 
 const ProfileModal = () => {
   const profile: UserProfile = useSelector((state: RootState) => state.user)
@@ -14,6 +15,7 @@ const ProfileModal = () => {
     localStorage.clear()
     dispatch(setToken(null))
     dispatch(setModal({ isOpened: false, type: '' }))
+    dispatch(setFavorite({id: 0, flower_id: 0, type: 'CLEAR'}))
     dispatch(setProfile({ first_name: null, id: null, last_name: null }))
   }
   return (
@@ -21,7 +23,7 @@ const ProfileModal = () => {
       <div className={Styles.content_modal}>
         <button
           className={Styles.close_btn}
-          onClick={() => dispatch(setModal({ isOpened: false }))}
+          onClick={() => dispatch(setModal({ isOpened: false, type: '' }))}
         >
           x
         </button>

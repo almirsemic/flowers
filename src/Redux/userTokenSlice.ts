@@ -10,11 +10,12 @@ export const userTokenSlice = createSlice({
   initialState,
   reducers: {
     setToken: (state, action: PayloadAction<string | null>) => {
-      localStorage.setItem(
-        'token',
-        action.payload !== null ? action.payload : '',
-      )
-      state.token = action.payload
+      if (action.payload !== null) {
+        localStorage.setItem('token', action.payload)
+        state.token = action.payload
+      }else{
+        state.token = action.payload
+      }
     },
   },
 })

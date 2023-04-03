@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://flowrspot-api.herokuapp.com/',
-})
+  baseURL: 'https://flowrspot-api.herokuapp.com/'
+});
 
-export default axiosInstance
+export default axiosInstance;

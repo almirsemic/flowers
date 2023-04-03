@@ -9,7 +9,7 @@ const SuccessfulRegistrationModal = () => {
       <div className={Styles.content_modal}>
         <button
           className={Styles.close_btn}
-          onClick={() => dispatch(setModal({ isOpened: false }))}
+          onClick={() => dispatch(setModal({ isOpened: false, type: '' }))}
         >
           x
         </button>

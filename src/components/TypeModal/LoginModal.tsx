@@ -26,14 +26,17 @@ const LoginModal = () => {
         user,
       )
       if (response.status === 200) {
-        dispatch(setToken(response.data.auth_token))
-        dispatch(setModal({ isOpened: true, type: 'SuccessfulLogin' }))
+      
         try {
-          const profile = await axios.get<User>('/api/v1/users/me', {
+          const profile = await axios.get<User>('/api/v1/users/me',
+          {
             headers: {
               Authorization: `Bearer ${response.data.auth_token}`,
             },
-          })
+          },
+          )
+          dispatch(setToken(response.data.auth_token))
+          dispatch(setModal({ isOpened: true, type: 'SuccessfulLogin' }))
           dispatch(setProfile(profile.data.user))
         } catch (profileError) {
           console.error(profileError)
@@ -52,7 +55,7 @@ const LoginModal = () => {
       <div className={Styles.content_modal}>
         <button
           className={Styles.close_btn}
-          onClick={() => dispatch(setModal({ isOpened: false }))}
+          onClick={() => dispatch(setModal({ isOpened: false, type: '' }))}
         >
           x
         </button>

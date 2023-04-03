@@ -1,0 +1,105 @@
+.container {
+    margin: 100px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .flowers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-rows: minmax(0, auto);
+    grid-gap: 20px;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .flower {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 240px;
+    min-height: 295px;
+    transition: all 0.3s;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .flower:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+  }
+  .flower > div {
+    text-align: center;
+  }
+  .star {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: all 0.3s;
+  }
+  .star:hover {
+    transform: scale(1.1);
+  }
+  .flower_name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .flower_name > * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .flower_name h3 {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 15px;
+    color: #ffffff;
+  }
+  
+  .flower_name small {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+  }
+  
+  .flower_name p {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    color: #fff;
+    width: 103px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+  }
+  .flower_name p:hover {
+    background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
+    box-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
+    transform: scale(1.1);
+  }
+  

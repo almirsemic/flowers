@@ -9,7 +9,7 @@ const SuccessfulLoginModal = () => {
       <div className={Styles.content_modal}>
         <button
           className={Styles.close_btn}
-          onClick={() => dispatch(setModal({ isOpened: false }))}
+          onClick={() => dispatch(setModal({ isOpened: false, type: '' }))}
         >
           x
         </button>
@@ -21,7 +21,7 @@ const SuccessfulLoginModal = () => {
           <button
             className={Styles.button}
             type="submit"
-            onClick={() => dispatch(setModal({ isOpened: false }))}
+            onClick={() => dispatch(setModal({ isOpened: false, type: '' }))}
           >
             OK
           </button>

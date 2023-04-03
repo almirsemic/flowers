@@ -27,9 +27,13 @@ const Navbar = () => {
     dispatch(setModal({ isOpened: true, type: arg }))
     setIsChecked(false)
   }
-  function handleNavigate(): void{
+  function handleNavigate(route: string): void {
     setIsChecked(false)
-    navigate('/')
+   if (route === '/favorites' && userInfoAndToken.token) {
+      navigate(route)
+    } else {
+      navigate(route)
+    }
   }
   return (
     <nav>
@@ -42,16 +46,16 @@ const Navbar = () => {
       />
       <div className={Styles.logo}>
         <img src={photo} alt="logo" />
-        <h3 onClick={() => handleNavigate()}>FlowrSpot</h3>
+        <h3 onClick={() => handleNavigate('/')}>FlowrSpot</h3>
       </div>
       <ul className={Styles.links}>
         <li>
-          <p onClick={() => handleNavigate()}>Flowers</p>
+          <p onClick={() => handleNavigate('/')}>Flowers</p>
         </li>
         <li>
-          <p>Latest Sightings</p>
+          <p onClick={() => handleNavigate('/sighting')}>Latest Sightings</p>
         </li>
-        <li>
+        <li onClick={() => handleNavigate('/favorites')}>
           <p>Favorites</p>
         </li>
         <li>
@@ -69,11 +73,17 @@ const Navbar = () => {
         </li>
         <li>
           {!userInfoAndToken.token ? (
-            <p className={Styles.new_account} onClick={() => handleModal('NewAccount')}>
+            <p
+              className={Styles.new_account}
+              onClick={() => handleModal('NewAccount')}
+            >
               New Account
             </p>
           ) : (
-            <p className={Styles.profile_photo} onClick={() => handleModal('Profile')}>
+            <p
+              className={Styles.profile_photo}
+              onClick={() => handleModal('Profile')}
+            >
               <img src={profile} alt="profile" />
             </p>
           )}

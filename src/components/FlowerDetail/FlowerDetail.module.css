@@ -32,7 +32,6 @@
 .star p {
   width: 30px;
   height: 30px;
-  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,8 +39,7 @@
   transition: all 0.5s;
   border-radius: 50%;
 }
-.star > p:hover {
-  background-color: #eaa79e;
+.star p:hover {
   transform: scale(1.1);
 }
 .star h3 {
